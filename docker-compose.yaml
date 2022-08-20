@@ -4,6 +4,8 @@ services:
     build: ./api-example
     command: ["npm", "run", "develop"]
     restart: always
+    environment:
+      - DATABASE_NAME=stream-arch
     volumes:
       - ./api-example/api:/app/api
       - ./api-example/lib:/app/lib
