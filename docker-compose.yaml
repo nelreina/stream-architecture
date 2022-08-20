@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  api-example:
+    build: ./api-example
+    command: ["npm", "run", "develop"]
+    restart: always
+    volumes:
+      - ./api-example/api:/app/api
+      - ./api-example/lib:/app/lib
+      - ./api-example/config:/app/config
+      - ./api-example/extensions:/app/extensions
+    ports:
+      - "1360:1337"
+    container_name: api-example
+    env_file:
+      - ./.env
+
+
+networks:
+  default:
+    name: local

@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  api-example:
+    build: ./api-example
+    container_name: api-example
+    restart: always
+    ports:
+      - "1360:1337"
+    env_file:
+      - ./.env.production
+  
+networks:
+  default:
+    external: 
+      name: local
