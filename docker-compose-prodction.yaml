@@ -4,6 +4,8 @@ services:
     build: ./api-example
     container_name: api-example
     restart: always
+    environment:
+      - DATABASE_NAME=stream-arch
     ports:
       - "1360:1337"
     env_file:
